@@ -8,8 +8,8 @@ class ContactScreen extends StatefulWidget {
 }
 
 class _ContactScreenState extends State<ContactScreen> {
-  final TextEditingController emailControler=TextEditingController();
-  final TextEditingController nameControler=TextEditingController();
+  final TextEditingController emailController=TextEditingController();
+  final TextEditingController nameController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class _ContactScreenState extends State<ContactScreen> {
         children: [
           SizedBox(height: 12,),
           TextField(
-            controller:nameControler,
+            controller:nameController,
             decoration:InputDecoration(
               labelText:"Enter Your name",
               hintText: "eg.Ali",
@@ -33,7 +33,7 @@ class _ContactScreenState extends State<ContactScreen> {
           ),
           SizedBox(height: 12,),
           TextField(
-            controller:emailControler,
+            controller:emailController,
             decoration:InputDecoration(
               labelText:"Enter Your email",
               hintText: "eg.abc@gmail.com",
@@ -47,8 +47,8 @@ class _ContactScreenState extends State<ContactScreen> {
             mainAxisAlignment:MainAxisAlignment.end,
             children: [
               ElevatedButton(onPressed: (){
-                String email=emailControler.text.trim();
-                String name=nameControler.text.trim();
+                String email=emailController.text.trim();
+                String name=nameController.text.trim();
                 if(email=="@"||email.isEmpty){
                   print("Email required");
                 } if(name.isEmpty){
